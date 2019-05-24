@@ -3,7 +3,7 @@
 all: build push_image
 
 build: 
-	mkidr -p make
+	mkdir -p make
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o make/app github.com/Luckyboys/test-ci
 
 push_image
