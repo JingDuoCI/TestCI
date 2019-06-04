@@ -10,6 +10,9 @@ build_in_docker:
 	mkdir -p make
 	go build -o make/app .
 
+image:
+	docker build -t $(tag) -f ./Dockerfile .
+
 push_image:
 	docker build -t reg-poc.cloudappl.com/lucky-web/web-service:$(BUILD_TAG) -f Dockerfile .
 	docker push reg-poc.cloudappl.com/lucky-web/web-service:$(BUILD_TAG)
