@@ -1,5 +1,3 @@
-FROM centos
-RUN yum update -y \
-	yum clean all
+FROM alpine
 COPY make/app /service/app
 CMD ["/service/app"]
